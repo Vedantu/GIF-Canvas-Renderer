@@ -1,0 +1,22 @@
+{
+  "name": "gifparser",
+  "version": "1.0.0",
+  "description": "library to parse gif and render gif flawlessly on canvas",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vedantu/GIFParser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vedantu/GIFParser/issues"
+  },
+  "homepage": "https://github.com/Vedantu/GIFParser#readme",
+  "dependencies": {
+    "gifuct-js": "^2.1.2"
+  }
+}
