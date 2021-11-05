@@ -1,0 +1,32 @@
+{
+  "name": "gifparser",
+  "version": "1.0.0",
+  "description": "library to parse gif and render gif flawlessly on canvas",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "lint": "tslint -p tsconfig.json",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Vedantu/GIFParser.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Vedantu/GIFParser/issues"
+  },
+  "homepage": "https://github.com/Vedantu/GIFParser#readme",
+  "dependencies": {
+    "gifuct-js": "^2.1.2"
+  },
+  "devDependencies": {
+    "typescript": "^4.4.4"
+  }
+}
