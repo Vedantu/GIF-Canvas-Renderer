@@ -1,4 +1,4 @@
-import { parseGIF, decompressFrames } from './GIFuct';
+import { parseGIF, decompressFrames } from 'gifuct-js';
 
 class GIFParser {
   constructor({
