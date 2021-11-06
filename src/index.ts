@@ -228,7 +228,9 @@ class GIFParser {
       initandParse = () => {
         this.frameImageData = undefined;
         if (window.OffscreenCanvas) {
+          // @ts-ignore  -- Typescript cannot find OffscreenCanvas though the version is above 4
           this.patchCanvas = new OffscreenCanvas(this.canvasElement?.width || 0, this.canvasElement?.height || 0);
+          // @ts-ignore  -- Typescript cannot find OffscreenCanvas though the version is above 4
           this.fullGifCanvas = new OffscreenCanvas(this.canvasElement?.width || 0, this.canvasElement?.height || 0);
         } else {
           this.patchCanvas = document.createElement('canvas');
