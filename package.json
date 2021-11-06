@@ -27,6 +27,9 @@
     "gifuct-js": "^2.1.2"
   },
   "devDependencies": {
+    "prettier": "^2.4.1",
+    "tslint": "^6.1.3",
+    "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.4.4"
   }
 }
