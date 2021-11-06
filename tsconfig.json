@@ -5,7 +5,6 @@
       "declaration": true, // When you building packages, this should be true. Typescript will then also export type definitions together with the compiled javascript code so the package can be used with both Typescript and Javascript.
       "outDir": "./lib", // The javascript will be compiled to the lib folder.
       "strict": true,
-      "types": ["offscreencanvas"],
     },
     "include": ["src"], // All source files in the src folder
     "exclude": ["node_modules", "**/__tests__/*"] // We don’t want to transpile node_modules, neither tests since these are only used during development
