@@ -40,9 +40,9 @@ class GIFParser {
   delay: number;
 
   frameImageData: ImageData | undefined;
-  patchCanvas: any; // error on using type HTMLCanvasElement ->  Type 'OffscreenCanvas' is missing the following properties from type 'HTMLCanvasElement'
+  patchCanvas: HTMLCanvasElement | null;
   patchCanvasCtx: CanvasRenderingContext2D | null;
-  fullGifCanvas: any; // error on using type HTMLCanvasElement ->  Type 'OffscreenCanvas' is missing the following properties from type 'HTMLCanvasElement'
+  fullGifCanvas: HTMLCanvasElement | null; 
   fullGifCanvasCtx: CanvasRenderingContext2D | null;
 
   constructor(constructorObj: constructorObjType) {
