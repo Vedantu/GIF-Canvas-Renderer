@@ -5,7 +5,7 @@ import { constructorObjType, frameChange, onCompletionLoopObj } from './parserTy
 
 declare const window: any;
 
-class GIFParser {
+class GIFRenderer {
   // url of the gif
   gifSource: string;
 
@@ -39,10 +39,13 @@ class GIFParser {
   // delay between two frames
   delay: number;
 
+  useRequestAnimationFrame: boolean;
+  runGifOnce: boolean;
+
   frameImageData: ImageData | undefined;
-  patchCanvas: any; // error on using type HTMLCanvasElement ->  Type 'OffscreenCanvas' is missing the following properties from type 'HTMLCanvasElement'
+  patchCanvas: HTMLCanvasElement | null;
   patchCanvasCtx: CanvasRenderingContext2D | null;
-  fullGifCanvas: any; // error on using type HTMLCanvasElement ->  Type 'OffscreenCanvas' is missing the following properties from type 'HTMLCanvasElement'
+  fullGifCanvas: HTMLCanvasElement | null; 
   fullGifCanvasCtx: CanvasRenderingContext2D | null;
 
   constructor(constructorObj: constructorObjType) {
@@ -64,6 +67,10 @@ class GIFParser {
     this.patchCanvasCtx = null;
     this.fullGifCanvas = null;
     this.fullGifCanvasCtx = null;
+    this.runGifOnce = constructorObj.runGifOnce;
+
+    // request animation frame isnot working with jest so a work around
+    this.useRequestAnimationFrame = constructorObj.useRequestAnimationFrame ?? true;
   }
 
   /**
@@ -172,7 +179,7 @@ class GIFParser {
     const imageData = this.drawPatch();
 
     if (this.onFrameChangeListener !== null) {
-      this.onFrameChangeListener({
+      this.onFrameChangeListener?.({
         currentIndex: this.currentFrameIndex,
         data: imageData,
         totalFrames: this.frames.length,
@@ -183,7 +190,6 @@ class GIFParser {
   requestTimeout = (fn: () => void, delay: number) => {
     const start = new Date().getTime();
     let rqstAnimation: number;
-
     const functionToHandleTimeout = () => {
       const timeNow = new Date().getTime();
       if (timeNow - start > delay) {
@@ -193,7 +199,6 @@ class GIFParser {
         rqstAnimation = requestAnimationFrame(functionToHandleTimeout);
       }
     };
-
     rqstAnimation = requestAnimationFrame(functionToHandleTimeout);
   };
 
@@ -208,12 +213,20 @@ class GIFParser {
     }
     this.putFrame();
     this.currentFrameIndex += 1;
-
     if (!this.stopRenderingGif && this.playing) {
       if (this.frames.length === this.currentFrameIndex) {
         this.completeLoop();
+        if(this.runGifOnce){
+          return;
+        }
       }
-      this.requestTimeout(this.doStep, 100);
+      if(this.useRequestAnimationFrame) {
+        this.requestTimeout(this.doStep, this.delay);
+      }
+      else {
+        // seems like unit testing is way too complex to take care of requestAnimationFrame
+        this.doStep();
+      }
     }
   };
 
@@ -279,4 +292,4 @@ class GIFParser {
   load = (callback: () => void) => this.loadUrl(this.gifSource, callback);
 }
 
-export default GIFParser;
+export default GIFRenderer;

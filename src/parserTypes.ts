@@ -13,4 +13,6 @@ export type constructorObjType = {
   renderGif: boolean;
   handleOnCompleteLoop: onCompletionLoopObj;
   delay: number;
+  useRequestAnimationFrame: boolean,
+  runGifOnce: boolean,
 };
