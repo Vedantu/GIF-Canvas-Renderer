@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
+    "coverage": "jest --config jestconfig.json --coverage",
     "build": "tsc",
     "format": "prettier --write \"src/**/*.ts\"",
     "lint": "tslint -p tsconfig.json",
