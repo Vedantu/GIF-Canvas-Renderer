@@ -2,7 +2,7 @@
   "name": "gif-canvas-renderer",
   "version": "1.0.0",
   "description": "library to parse gif and render gif flawlessly on canvas",
-  "main": "index.js",
+  "main": "lib/index.js",
   "scripts": {
     "test": "jest --config jestconfig.json",
     "coverage": "jest --config jestconfig.json --coverage",
