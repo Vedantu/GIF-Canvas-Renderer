@@ -48,7 +48,7 @@ _Installation:_
 | Option              | Description                                                           |
 |---------------------|-----------------------------------------------------------------------|
 | gifSource           | url of the gif file                                                   |
-| on_frame_change     | function is called on every frame change with ImageData  <br> structure of ImageData is <br> {currentIndex: current_frame_index, data: ImageData,totalFrames: total_frames_in_the_gif }                                                        |
+| on_frame_change     | function is called on every frame change with ImageData  <br> structure of ImageData is <br> {currentIndex: current_frame_index, data: ImageData, totalFrames: total_frames_in_the_gif }                                                        |
 | canvasElement       | canvas html element                                                   |
 | renderGif           | true if gif is needed to be rendered on canvas                        |
 | handleOnCompleteLoop| function gets called once loop is completed , parameters are <br> iterationCount = current_Count_loop, length = total_frames                                    |
