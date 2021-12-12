@@ -43,7 +43,7 @@ _Installation:_
           console.log('do something')
       })
  
-## constructor properties
+## Constructor properties
 
 | Option              | Description                                                           |
 |---------------------|-----------------------------------------------------------------------|
@@ -54,7 +54,7 @@ _Installation:_
 | handleOnCompleteLoop| function gets called once loop is completed , parameters are <br> iterationCount = current_Count_loop, length = total_frames                                    |
 | delay               | delay between two frames to render                                    |
 
-## utility methods
+## Utility methods
 
 | Methods             | Description                                                           |
 |---------------------|-----------------------------------------------------------------------|
