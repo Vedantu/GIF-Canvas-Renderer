@@ -43,4 +43,29 @@ _Installation:_
           console.log('do something')
       })
  
+## constructor properties
+
+| Option              | Description                                                           |
+|---------------------|-----------------------------------------------------------------------|
+| gifSource           | url of the gif file                                                   |
+| on_frame_change     | function is called on every frame change with ImageData               |
+|                     | structure of ImageData is {currentIndex: current_frame_index, data:   |
+|                     | ImageData, totalFrames: total_frames_in_the_gif }                     |
+| canvasElement       | canvas html element                                                   |
+| renderGif           | true if gif is needed to be rendered on canvas                        |
+| handleOnCompleteLoop| function gets called once loop is completed , parameters are          |
+|                     | iterationCount = current_Count_loop, length = total_frames            |
+| delay               | delay between two frames to render                                    |
+
+## utility methods
+
+| Methods             | Description                                                           |
+|---------------------|-----------------------------------------------------------------------|
+| stopParsingGIF      | stop parsing gif                                                      |
+| getLength           | total frame length of the gif                                         |
+| play                | method to play the gif                                                |
+| pause               | method to pause the gif                                               |
+| isPlaying           | returns true if gif is playing otherwise false                        |
+
+
 
