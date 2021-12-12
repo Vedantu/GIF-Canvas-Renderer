@@ -2,14 +2,14 @@
 
 A simple GIF renderer on canvas
 
-We needed an efficient GIF renderer on canvas for our live classroom at [Vedantu][https://www.vedantu.com/]
-There are some libraries like [libgif][https://github.com/buzzfeed/libgif-js] but it has many memory leaks and we found it very inefficient.
+We needed an efficient GIF renderer on canvas for our live classroom at [Vedantu](https://www.vedantu.com/)
+There are some libraries like [libgif](https://github.com/buzzfeed/libgif-js) but it has many memory leaks and we found it very inefficient.
 
-we came across an amazing GIF Parser by [Matt Way][https://github.com/matt-way] [gifuct-js][https://github.com/matt-way/gifuct-js]
+we came across an amazing GIF Parser by [Matt Way](https://github.com/matt-way) [gifuct-js](https://github.com/matt-way/gifuct-js)
 
 It is amazingly efficient and parses the next frame based on what is changed from previous one hence less pixel change on canvas at run time.
 
-This library uses [gifuct-js][https://github.com/matt-way/gifuct-js] internally to parse the gif and hence render the gif on canvas
+This library uses [gifuct-js](https://github.com/matt-way/gifuct-js) internally to parse the gif and hence render the gif on canvas
 
 ### Usage
 
