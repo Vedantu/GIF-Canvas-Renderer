@@ -3,7 +3,7 @@
  */
  const fs = require('fs');
 
- import 'jest-canvas-mock';
+import 'jest-canvas-mock';
 import { parseGIF, decompressFrames } from 'gifuct-js';
 
 import GIFRenderer from '../index'
