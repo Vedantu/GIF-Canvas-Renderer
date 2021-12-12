@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/jest": "^27.0.2",
     "jest": "^27.3.1",
+    "jest-canvas-mock": "^2.3.1",
     "prettier": "^2.4.1",
     "ts-jest": "^27.0.7",
     "tslint": "^6.1.3",
