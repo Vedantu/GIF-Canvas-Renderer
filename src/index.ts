@@ -50,7 +50,7 @@ class GIFRenderer {
 
   constructor(constructorObj: constructorObjType) {
     this.gifSource = constructorObj.gifSource;
-    this.onFrameChangeListener = constructorObj.on_frame_change;
+    this.onFrameChangeListener = constructorObj.onFrameChange;
     this.handleOnCompleteLoop = constructorObj.handleOnCompleteLoop;
     this.canvasElement = constructorObj.canvasElement;
     this.renderGif = constructorObj.renderGif;

@@ -8,7 +8,7 @@ export type onCompletionLoopObj = (iterationCount: number, frameLength: number) 
 
 export type constructorObjType = {
   gifSource: string;
-  on_frame_change: frameChange;
+  onFrameChange: frameChange;
   canvasElement: HTMLCanvasElement;
   renderGif: boolean;
   handleOnCompleteLoop: onCompletionLoopObj;
