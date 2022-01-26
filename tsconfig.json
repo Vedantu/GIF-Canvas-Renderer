@@ -3,7 +3,7 @@
       "target": "es5", // We want to compile to es5 since we want to build a package with browser compatibility.
       "module": "commonjs", // Use commonjs for compatibility.
       "declaration": true, // When you building packages, this should be true. Typescript will then also export type definitions together with the compiled javascript code so the package can be used with both Typescript and Javascript.
-      "outDir": "./lib", // The javascript will be compiled to the lib folder.
+      "outDir": "./dist", // The javascript will be compiled to the lib folder.
       "strict": true,
     },
     "include": ["src"], // All source files in the src folder
